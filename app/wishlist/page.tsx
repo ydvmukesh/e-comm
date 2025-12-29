@@ -90,7 +90,7 @@ export default function WishlistPage() {
                 )}
               </div>
             </Link>
-            <CardContent className="py-4 space-y-3">
+            <CardContent className="py-2 md:py-4 space-y-3">
               <Link href={`/products/${item.id}`}>
                 <div className="mb-1 flex items-center justify-between">
                   <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
