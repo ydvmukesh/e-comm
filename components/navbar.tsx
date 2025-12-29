@@ -77,7 +77,7 @@ export function Navbar() {
 
             {/* Desktop Navigation */}
             {!searchOpen && (
-              <div className="hidden md:flex md:items-center md:gap-6">
+              <div className="hidden md:flex md:items-center md:gap-4 lg:gap-6">
                 <Link
                   href="/"
                   className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
