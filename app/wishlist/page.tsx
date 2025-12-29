@@ -72,9 +72,9 @@ export default function WishlistPage() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4  md:gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-4  md:gap-8 md:grid-cols-2 lg:grid-cols-4 py-2">
         {items.map((item) => (
-          <Card key={item.id} className="overflow-hidden border-none shadow-none transition-all hover:shadow-lg">
+          <Card key={item.id} className="overflow-hidden border-none bg-background shadow-sm transition-all duration-300 hover:shadow-md dark:bg-card ">
             <Link href={`/products/${item.id}`} className="group block">
               <div className="relative aspect-square overflow-hidden rounded-t-xl bg-muted">
                 <Image
@@ -90,18 +90,18 @@ export default function WishlistPage() {
                 )}
               </div>
             </Link>
-            <CardContent className="p-4 space-y-3">
+            <CardContent className="py-4 space-y-3">
               <Link href={`/products/${item.id}`}>
                 <div className="mb-1 flex items-center justify-between">
                   <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
                     {item.category}
                   </span>
                 </div>
-                <h3 className="line-clamp-2 font-semibold hover:text-primary transition-colors">
+                <h3 className="line-clamp-1 font-medium hover:text-primary transition-colors">
                   {item.name}
                 </h3>
-                <div className="mt-2">
-                  <span className="text-lg font-bold">₹{item.price}</span>
+                <div className="mt-1">
+                  <span className="text-md sm:text-lg font-bold">₹{item.price}</span>
                 </div>
               </Link>
               
@@ -113,7 +113,7 @@ export default function WishlistPage() {
                   onClick={() => handleMoveToCart(item)}
                 >
                   <ShoppingCart className="size-4" />
-                  Add to Cart
+                 <span className="hidden sm:block"> Add to Cart</span>
                 </Button>
                 <Button
                   size="sm"

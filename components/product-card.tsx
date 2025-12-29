@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import Image from "next/image"
+import Image from "next/image.js"
 import Link from "next/link"
 import { ShoppingCart, Star, Heart } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -73,7 +73,7 @@ export function ProductCard({ product, viewMode = "grid", className }: ProductCa
                 <Badge className="absolute top-3 left-3 bg-destructive text-destructive-foreground">Sale</Badge>
               )}
               {!product.inStock && (
-                <Badge variant="secondary" className="absolute top-3 right-3 bg-muted/80 backdrop-blur-sm">
+                <Badge variant="secondary" className="absolute top-3 left-3 bg-muted/80 backdrop-blur-sm">
                   Out of Stock
                 </Badge>
               )}
@@ -159,7 +159,7 @@ export function ProductCard({ product, viewMode = "grid", className }: ProductCa
 
   // Grid View Layout (default)
   return (
-    <Link href={`/products/${product.id}`} className="group block h-full">
+    <Link href={`/products/${product.id}`} className="group block h-full py-1">
       <Card className="h-full overflow-hidden border-none bg-background shadow-sm transition-all duration-300 hover:shadow-md dark:bg-card">
         <div className="relative aspect-square overflow-hidden rounded-xl bg-muted">
           <Image
@@ -172,7 +172,7 @@ export function ProductCard({ product, viewMode = "grid", className }: ProductCa
             <Badge className="absolute top-3 left-3 bg-destructive text-destructive-foreground">Sale</Badge>
           )}
           {!product.inStock && (
-            <Badge variant="secondary" className="absolute top-3 right-3 bg-muted/80 backdrop-blur-sm">
+            <Badge variant="secondary" className="absolute top-3 left-3 bg-muted/80 backdrop-blur-sm">
               Out of Stock
             </Badge>
           )}
@@ -181,7 +181,7 @@ export function ProductCard({ product, viewMode = "grid", className }: ProductCa
             size="icon"
             className={cn(
               "absolute top-3 right-3 bg-background/50 backdrop-blur-sm hover:bg-background/80 transition-all",
-              inWishlist ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+              inWishlist ? "opacity-100" : "opacity-100 group-hover:opacity-100"
             )}
             onClick={handleToggleWishlist}
             aria-label={inWishlist ? "Remove from favorites" : "Add to favorites"}
@@ -189,7 +189,7 @@ export function ProductCard({ product, viewMode = "grid", className }: ProductCa
             <Heart className={cn("size-5", inWishlist && "fill-red-500 text-red-500")} />
           </Button>
         </div>
-        <CardContent className="p-4">
+        <CardContent className="pt-2 ">
           <div className="mb-1 flex items-center justify-between">
             <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
               {product.category}
@@ -199,15 +199,15 @@ export function ProductCard({ product, viewMode = "grid", className }: ProductCa
               <span>{product.rating}</span>
             </div>
           </div>
-          <h3 className="line-clamp-1 font-semibold transition-colors group-hover:text-primary">{product.name}</h3>
-          <div className="mt-2 flex items-center gap-2">
-            <span className="text-lg font-bold">₹{product.price}</span>
+          <h3 className="line-clamp-1 font-medium transition-colors group-hover:text-primary">{product.name}</h3>
+          <div className="mt-1 flex items-center gap-2">
+            <span className="text-md sm:text-lg font-bold">₹{product.price}</span>
             {product.originalPrice && (
               <span className="text-sm text-muted-foreground line-through">₹{product.originalPrice}</span>
             )}
           </div>
         </CardContent>
-        <CardFooter className="p-4 pt-0">
+        <CardFooter className="">
           <Button className="w-full gap-2 rounded-lg" disabled={!product.inStock} onClick={handleAddToCart}>
             <ShoppingCart className="size-4" />
             Add to Cart

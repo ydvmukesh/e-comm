@@ -151,14 +151,14 @@ export default function ProductDetailsPage() {
               {product.category}
             </Badge>
             <h1 className="text-3xl font-bold sm:text-4xl">{product.name}</h1>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 sm:gap-4">
               <div className="flex items-center gap-1 text-amber-500">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className={`size-4 ${i < Math.floor(product.rating) ? "fill-current" : ""}`} />
                 ))}
                 <span className="ml-1 font-bold text-foreground">{product.rating}</span>
               </div>
-              <span className="text-sm text-muted-foreground">({product.reviews} reviews)</span>
+              <span className="text-sm text-muted-foreground whitespace-nowrap">({product.reviews} reviews)</span>
               <Separator orientation="vertical" className="h-4" />
               <Badge variant={product.inStock ? "secondary" : "destructive"} className="rounded-lg">
                 {product.inStock ? "In Stock" : "Out of Stock"}
@@ -353,7 +353,7 @@ export default function ProductDetailsPage() {
             </Carousel>
           </div>
         ) : (
-          <div className="flex overflow-x-auto md:overflow-visible scrollbar-hide md:grid grid-cols-1 gap-4  md:gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <div className="-mx-4 md:mx-0 px-4 flex overflow-x-auto md:overflow-visible scrollbar-hide md:grid grid-cols-1 gap-3  md:gap-8 md:grid-cols-2 lg:grid-cols-4">
             {relatedProducts.map((product) => (
               <ProductCard key={product.id} product={product} className="min-w-[240px] md:min-w-auto" />
             ))}

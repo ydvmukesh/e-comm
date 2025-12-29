@@ -60,11 +60,12 @@ export function NewArrivals() {
       </Carousel>
     </div>
   ) : (
-    <div className="flex overflow-x-auto md:overflow-visible scrollbar-hide md:grid grid-cols-1 gap-4  md:gap-8 md:grid-cols-2 lg:grid-cols-4">
+    <div className="-mx-4 md:mx-0 px-4 flex overflow-x-auto md:overflow-visible scrollbar-hide md:grid grid-cols-1 gap-3  md:gap-8 md:grid-cols-2 lg:grid-cols-4">
       {newArrivals.map((product) => (
         <ProductCard key={product.id} product={product} className="min-w-[240px] md:min-w-auto" />
       ))}
-    </div>
+      </div>
+    
   )}
       </div>
     </section>

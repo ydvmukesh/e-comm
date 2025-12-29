@@ -23,7 +23,7 @@ export function PromoBanner() {
   }
 
   return (
-    <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <section className="mx-auto max-w-7xl px-4 py-10 md:py-16 sm:px-6 lg:px-8">
       <Card className="relative overflow-hidden rounded-3xl border border-primary/10 bg-linear-to-br from-primary/5 via-background to-primary/5 p-4 sm:p-12 shadow-lg">
         {/* Background Decorative Elements */}
         <div className="absolute -top-32 -left-32 size-72 rounded-full bg-primary/10 blur-3xl animate-pulse" />
