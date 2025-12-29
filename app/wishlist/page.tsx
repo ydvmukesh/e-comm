@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Heart, ShoppingCart, Trash2, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { useWishlistStore } from "@/store/wishlist-store"
 import { useCartStore } from "@/store/cart-store"
@@ -76,7 +76,7 @@ export default function WishlistPage() {
         {items.map((item) => (
           <Card key={item.id} className="overflow-hidden border-none bg-background shadow-sm transition-all duration-300 hover:shadow-md dark:bg-card ">
             <Link href={`/products/${item.id}`} className="group block">
-              <div className="relative aspect-square overflow-hidden rounded-t-xl bg-muted">
+              <div className="relative aspect-square overflow-hidden rounded-xl bg-muted">
                 <Image
                   src={item.image || "/placeholder.svg"}
                   alt={item.name}
@@ -90,7 +90,7 @@ export default function WishlistPage() {
                 )}
               </div>
             </Link>
-            <CardContent className="py-2 md:py-4 space-y-3">
+            <CardContent className="pt-2 space-y-3">
               <Link href={`/products/${item.id}`}>
                 <div className="mb-1 flex items-center justify-between">
                   <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
@@ -105,10 +105,13 @@ export default function WishlistPage() {
                 </div>
               </Link>
               
-              <div className="flex gap-2 pt-2">
+          
+            </CardContent>
+            <CardFooter className="">
+              <div className="flex gap-2 w-full">
                 <Button
                   size="sm"
-                  className="flex-1 gap-2 rounded-lg"
+                  className="flex-auto gap-2 rounded-lg"
                   disabled={!item.inStock}
                   onClick={() => handleMoveToCart(item)}
                 >
@@ -118,13 +121,13 @@ export default function WishlistPage() {
                 <Button
                   size="sm"
                   variant="outline"
-                  className="rounded-lg"
+                  className="rounded-lg flex-auto"
                   onClick={() => handleRemove(item.id, item.name)}
                 >
                   <Trash2 className="size-4" />
                 </Button>
               </div>
-            </CardContent>
+              </CardFooter>
           </Card>
         ))}
       </div>

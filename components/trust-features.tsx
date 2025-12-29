@@ -27,9 +27,9 @@ export function TrustFeatures() {
   return (
     <section className="bg-background py-10 md:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {FEATURES.map((feature, index) => (
-            <div key={index} className="flex items-start gap-4 transition-transform hover:translate-y-[-2px]">
+            <div key={index} className="flex items-start gap-2 md:gap-4 transition-transform hover:translate-y-[-2px]">
               <div className="flex size-12 shrink-0 items-center justify-center rounded-xl text-slate-900">
                 <feature.icon className="size-8 text-primary" strokeWidth={1.5} />
               </div>

@@ -159,7 +159,7 @@ export function ProductCard({ product, viewMode = "grid", className }: ProductCa
 
   // Grid View Layout (default)
   return (
-    <Link href={`/products/${product.id}`} className="group block h-full py-1">
+    <Link href={`/products/${product.id}`} className="group block h-full py-1 min-w-[155px] md:min-w-auto">
       <Card className="h-full overflow-hidden border-none bg-background shadow-sm transition-all duration-300 hover:shadow-md dark:bg-card">
         <div className="relative aspect-square overflow-hidden rounded-xl bg-muted">
           <Image
@@ -189,7 +189,7 @@ export function ProductCard({ product, viewMode = "grid", className }: ProductCa
             <Heart className={cn("size-5", inWishlist && "fill-red-500 text-red-500")} />
           </Button>
         </div>
-        <CardContent className="pt-2 ">
+        <CardContent className="pt-2">
           <div className="mb-1 flex items-center justify-between">
             <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
               {product.category}

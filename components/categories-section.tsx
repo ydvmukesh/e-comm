@@ -23,12 +23,12 @@ export function CategoriesSection() {
           </Link>
         </div>
 
-        <div className="-mx-4 md:mx-0 px-4 flex overflow-x-auto md:overflow-visible scrollbar-hide md:grid grid-cols-1 gap-4 md:gap-6 md:grid-cols-3 lg:grid-cols-3">
+        <div className="-mx-4 md:mx-0 px-4 flex overflow-x-auto md:overflow-visible scrollbar-hide md:grid grid-cols-1 gap-3 md:gap-6 md:grid-cols-3 lg:grid-cols-3">
           {categories.map((category) => (
             <Link
               key={category.id}
               href={`/products?category=${category.slug}`}
-              className="group relative h-64 overflow-hidden rounded-2xl border bg-muted min-w-[240px] md:min-w-auto"
+              className="group relative h-64 overflow-hidden rounded-2xl border bg-muted min-w-[155px] md:min-w-auto max-h-[150px] md:max-h-full"
             >
               <Image
                 src={category.image || "/placeholder.svg"}
@@ -37,7 +37,7 @@ export function CategoriesSection() {
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity group-hover:opacity-90" />
-              <div className="absolute bottom-6 left-6 text-white">
+              <div className="absolute bottom-4 md:bottom-6 left-4 md:left-6 text-white">
                 <h3 className="text-xl font-bold">{category.name}</h3>
                 <p className="text-sm text-white/80">{category.productCount} Products</p>
               </div>
