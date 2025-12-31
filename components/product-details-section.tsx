@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils"
 
 export default function ProductDetailsSection () {
   const params = useParams()
-const id = params.id as string; // Type assertion – safe because it's a string route param
+  const id = Array.isArray(params.id) ? params.id[0] : params.id
 
   const router = useRouter()
   const { addItem } = useCartStore()
@@ -34,7 +34,7 @@ const id = params.id as string; // Type assertion – safe because it's a string
     return (
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4">
         <h2 className="text-2xl font-bold">Product not found</h2>
-        <Button onClick={() => router.push("/")}>Back to Home</Button>
+        <Button onClick={() => router.push("/products")}>Back to Products</Button>
       </div>
     )
   }

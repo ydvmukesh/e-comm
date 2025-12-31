@@ -2,10 +2,11 @@
 
 import { useState } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { LoginForm } from "./login-modal"
+import { SignupForm } from "./signup-modal"
+import { ForgotPasswordForm } from "./forgot-password-modal"
+
 
 interface AuthModalProps {
   isOpen: boolean
@@ -32,7 +33,7 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
         </DialogHeader>
 
         <div className="mt-4">
-          {view !== "forgot" && (
+          {view !== "forgot" ? (
             <Tabs
               defaultValue={view}
               value={view}
@@ -45,65 +46,15 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
               </TabsList>
 
               <TabsContent value="login">
-                <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="m@example.com" required />
-                  </div>
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <Label htmlFor="password">Password</Label>
-                      <button
-                        type="button"
-                        onClick={() => setView("forgot")}
-                        className="text-xs text-primary hover:underline"
-                      >
-                        Forgot password?
-                      </button>
-                    </div>
-                    <Input id="password" type="password" required />
-                  </div>
-                  <Button type="submit" className="w-full">
-                    Sign In
-                  </Button>
-                </form>
+                <LoginForm onForgotPassword={() => setView("forgot")} />
               </TabsContent>
 
               <TabsContent value="signup">
-                <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Full Name</Label>
-                    <Input id="name" placeholder="John Doe" required />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="signup-email">Email</Label>
-                    <Input id="signup-email" type="email" placeholder="m@example.com" required />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="signup-password">Password</Label>
-                    <Input id="signup-password" type="password" required />
-                  </div>
-                  <Button type="submit" className="w-full">
-                    Create Account
-                  </Button>
-                </form>
+                <SignupForm />
               </TabsContent>
             </Tabs>
-          )}
-
-          {view === "forgot" && (
-            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-              <div className="space-y-2">
-                <Label htmlFor="forgot-email">Email</Label>
-                <Input id="forgot-email" type="email" placeholder="m@example.com" required />
-              </div>
-              <Button type="submit" className="w-full">
-                Send Reset Link
-              </Button>
-              <Button variant="ghost" className="w-full" onClick={() => setView("login")}>
-                Back to Login
-              </Button>
-            </form>
+          ) : (
+            <ForgotPasswordForm onBackToLogin={() => setView("login")} />
           )}
         </div>
       </DialogContent>

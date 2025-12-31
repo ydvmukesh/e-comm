@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { User, LogOut, CreditCard, ChevronRight } from "lucide-react"
+import { User, LogOut, CreditCard, ChevronRight, Edit } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -42,7 +42,7 @@ export default function ProfilePage() {
             <p className="text-muted-foreground">Member since 2023</p>
           </div>
         </div>
-        <Button variant="outline" className="rounded-xl border-2 bg-transparent gap-2">
+        <Button variant="outline" className="rounded-xl border-2 bg-destructive/10 gap-2 text-destructive border-destructive hover:bg-destructive/10" >
           <LogOut className="size-4" />
           Sign Out
         </Button>
@@ -85,7 +85,7 @@ export default function ProfilePage() {
                     className="rounded-lg bg-transparent"
                     onClick={() => setIsEditing(true)}
                   >
-                    Edit Profile
+                    Edit Profile <Edit className="size-4" />
                   </Button>
                 ) : (
                   <div className="flex gap-2">

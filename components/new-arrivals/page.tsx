@@ -8,7 +8,7 @@ export function NewArrivals() {
   return (
     <section className="py-8 sm:py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-8 sm:mb-8 flex items-end justify-between flex-col sm:flex-row">
+        <div className="mb-8 flex items-end justify-between flex-col sm:flex-row">
           <div className="space-y-2">
             <h2 className="text-3xl font-bold tracking-tight">New Arrivals</h2>
             <p className="text-muted-foreground">
@@ -26,9 +26,9 @@ export function NewArrivals() {
 
         <Suspense
           fallback={
-            <div className="flex -mx-4 px-4 md:mx-0 md:px-0 overflow-x-auto scrollbar-hide md:overflow-visible md:grid grid-cols-1 gap-3 md:gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div className="flex -mx-4 px-4 overflow-x-auto scrollbar-hide md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-8">
               {Array.from({ length: 4 }).map((_, i) => (
-                <ProductCardSkeleton key={i}/>
+                <ProductCardSkeleton key={i} />
               ))}
             </div>
           }

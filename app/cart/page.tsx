@@ -36,7 +36,7 @@ export default function CartPage() {
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <h1 className="mb-10 text-3xl font-bold">Shopping Cart ({totalItems})</h1>
 
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-10 md:gap-12 lg:grid-cols-3">
         {/* Cart Items */}
         <div className="lg:col-span-2 space-y-4">
           {items.map((item) => {
@@ -45,7 +45,7 @@ export default function CartPage() {
             return (
               <div
                 key={`${item.id}-${variantKey || 'default'}`}
-                className="group relative flex flex-col gap-4 rounded-3xl border bg-muted/30 p-6 transition-all hover:shadow-md sm:flex-row sm:items-center dark:bg-card"
+                className="group relative flex flex-col gap-4 rounded-3xl border bg-muted/30 p-4 md:p-6 transition-all hover:shadow-md sm:flex-row sm:items-center dark:bg-card"
               >
                 <div className="relative aspect-square size-28 overflow-hidden rounded-2xl border bg-muted">
                   <Image src={item.image || "/placeholder.svg"} alt={item.name} fill className="object-cover" />
@@ -100,8 +100,8 @@ export default function CartPage() {
 
         {/* Order Summary */}
         <div className="space-y-6">
-          <Card className="rounded-[2.5rem] border bg-muted/30 shadow-none">
-            <CardContent className="p-8">
+          <Card className="rounded-3xl md:rounded-[2.5rem] border bg-muted/30 shadow-none">
+            <CardContent className="p-4 md:p-8">
               <h2 className="mb-6 text-xl font-bold">Order Summary</h2>
               <div className="space-y-4 text-sm">
                 <div className="flex justify-between">

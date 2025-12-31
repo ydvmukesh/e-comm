@@ -368,7 +368,7 @@ export const products: Product[] = [
     images: ["/leather-wallet.jpg"],
     rating: 4.7,
     reviews: 156,
-    featured: false,
+    featured: true,
     inStock: false,
     features: ["RFID Protection", "Genuine Leather", "Slim Design"],
     attributes: [{ name: "Material", value: "leather" }],

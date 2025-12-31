@@ -85,7 +85,7 @@ export default function CheckoutPage() {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-10 md:gap-12 lg:grid-cols-3">
         <div className="lg:col-span-2">
           <div className="mb-12 flex items-center justify-between">
             {steps.map((s, i) => (
@@ -119,7 +119,7 @@ export default function CheckoutPage() {
             ))}
           </div>
 
-          <div className="rounded-[2.5rem] border bg-background p-6 md:p-12 shadow-sm">
+          <div className="rounded-3xl md:rounded-[2.5rem] border bg-background p-4 md:p-12 shadow-sm">
             {step === 1 && (
               <form onSubmit={shippingForm.handleSubmit(nextStep)} className="space-y-6">
                 <h2 className="text-2xl font-bold mb-6">Shipping Information</h2>
@@ -313,7 +313,7 @@ export default function CheckoutPage() {
 
         {/* Sidebar Order Summary */}
         <div className="space-y-6">
-          <div className="rounded-[2.5rem] border bg-muted/30 p-8 space-y-6 sticky top-24">
+          <div className="rounded-3xl md:rounded-[2.5rem] border bg-muted/30 p-8 space-y-6 sticky top-24">
             <h2 className="text-xl font-bold">Order Summary</h2>
             <div className="max-h-[300px] overflow-y-auto pr-2 space-y-4  scrollbar-thin
   scrollbar-thumb-primary/60
