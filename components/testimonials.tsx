@@ -71,7 +71,7 @@ export function Testimonials() {
           >
             <CarouselContent className="-ml-2 md:-ml-2">
               {testimonials.map((testimonial) => (
-                <CarouselItem key={testimonial.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={testimonial.id} className="pl-3 md:pl-6 md:basis-1/2 lg:basis-1/3">
                   <Card className="h-full border-none bg-background shadow-sm hover:shadow-md transition-shadow duration-300">
                     <CardContent className="group relative rounded-3xl bg-background p-8 transition-all dark:bg-card h-full flex flex-col">
                       <Quote className="absolute top-6 right-8 size-10 text-primary/10 transition-colors group-hover:text-primary/20" />

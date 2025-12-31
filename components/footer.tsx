@@ -11,8 +11,8 @@ import { Input } from "@/components/ui/input"
 export function Footer() {
   return (
     <footer className="border-t bg-muted/30">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-12 lg:grid-cols-12">
+      <div className="mx-auto max-w-7xl px-4 pt-10 pb-8 md:py-12 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 gap-10 md:gap-12 lg:grid-cols-12">
           {/* Brand - 3 columns */}
           <div className="space-y-6 lg:col-span-3 col-span-2">
             <div className="flex items-center gap-2">
@@ -127,7 +127,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+        <div className="mt-8 md:mt-12 border-t pt-4 md:pt-8 flex flex-col md:flex-row items-center justify-between gap-2 md:gap-4 text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} Elegance. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="/policies?tab=terms" className="hover:text-primary transition-colors">

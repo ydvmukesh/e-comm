@@ -23,7 +23,7 @@ export function CategoriesSection() {
           </Link>
         </div>
 
-        <div className="-mx-4 md:mx-0 px-4 flex overflow-x-auto md:overflow-visible scrollbar-hide md:grid grid-cols-1 gap-3 md:gap-6 md:grid-cols-3 lg:grid-cols-3">
+        <div className="-mx-4 md:mx-0 px-4 md:px-0 flex overflow-x-auto md:overflow-visible scrollbar-hide md:grid grid-cols-1 gap-3 md:gap-6 md:grid-cols-3 lg:grid-cols-3">
           {categories.map((category) => (
             <Link
               key={category.id}

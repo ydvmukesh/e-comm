@@ -1,3 +1,5 @@
+import { tr } from "date-fns/locale"
+
 export interface FilterOption {
   label: string
   value: string
@@ -326,7 +328,7 @@ export const products: Product[] = [
     images: ["/ceramic-coffee-set.png"],
     rating: 4.4,
     reviews: 89,
-    featured: false,
+    featured: true,
     inStock: true,
     features: ["65W Power", "Multi-port", "Compact Design"],
     attributes: [

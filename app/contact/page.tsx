@@ -142,7 +142,7 @@ export default function ContactPage() {
                           id="name"
                           name="name"
                           placeholder="John Doe"
-                          className="mt-2"
+                          className="mt-1"
                         />
                         <ErrorMessage name="name">
                           {(msg) => <p className="mt-1 text-xs text-red-500">{msg}</p>}
@@ -173,7 +173,7 @@ export default function ContactPage() {
                           id="phone"
                           name="phone"
                           placeholder="+1 (555) 123-4567"
-                          className="mt-2"
+                          className="mt-1"
                         />
                         <ErrorMessage name="phone">
                           {(msg) => <p className="mt-1 text-xs text-red-500">{msg}</p>}
@@ -187,7 +187,7 @@ export default function ContactPage() {
                           id="subject"
                           name="subject"
                           placeholder="How can we help?"
-                          className="mt-2"
+                          className="mt-1"
                         />
                         <ErrorMessage name="subject">
                           {(msg) => <p className="mt-1 text-xs text-red-500">{msg}</p>}

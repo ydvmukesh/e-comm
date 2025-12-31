@@ -11,13 +11,15 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import { useIsMobile } from "@/hooks/use-mobile"
 
 export function NewArrivals() {
   // Get the newest products (sorting by ID in descending order)
   const newArrivals = [...products]
     .sort((a, b) => Number(b.id) - Number(a.id))
     .slice(0, 4)
-    const shouldUseSlider = newArrivals.length > 4
+     const isMobile = useIsMobile()
+     const shouldUseSlider = !isMobile && newArrivals.length > 4
 
   return (
     <section className="py-8 sm:py-12">
@@ -48,7 +50,7 @@ export function NewArrivals() {
       >
         <CarouselContent className="-ml-2 md:-ml-3">
           {newArrivals.map((product) => (
-            <CarouselItem key={product.id} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/4">
+            <CarouselItem key={product.id} className="pl-3 md:pl-6 basis-1/2 lg:basis-1/4">
               <div className="h-full">
                 <ProductCard product={product} />
               </div>
@@ -60,7 +62,7 @@ export function NewArrivals() {
       </Carousel>
     </div>
   ) : (
-    <div className="-mx-4 md:mx-0 px-4 md:px-0  flex overflow-x-auto md:overflow-visible scrollbar-hide md:grid grid-cols-1 gap-3  md:gap-8 md:grid-cols-2 lg:grid-cols-4">
+    <div className="-mx-4 md:mx-0 px-4 md:px-0  flex overflow-x-auto md:overflow-visible scrollbar-hide md:grid grid-cols-1 gap-3  md:gap-6 md:grid-cols-2 lg:grid-cols-4">
       {newArrivals.map((product) => (
         <ProductCard key={product.id} product={product} className="min-w-[240px] md:min-w-auto" />
       ))}
