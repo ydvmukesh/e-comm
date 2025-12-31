@@ -1,12 +1,6 @@
 "use client"
-
-import type React from "react"
 import Link from "next/link"
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, Linkedin } from "lucide-react"
-import { useState } from "react"
-import { useToast } from "@/hooks/use-toast"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 
 export function Footer() {
   return (
