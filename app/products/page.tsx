@@ -1,5 +1,9 @@
-import { ProductsContent } from "@/components/products-page/page";
+// app/products/page.tsx
+import ProductsProductsListPagePage from "@/components/products-page/page";
 
-export default function ProductsPage() {
-  return <ProductsContent />
+export default async function ProductsPage() {
+  // simulate server fetch
+  await new Promise((r) => setTimeout(r, 1500))
+
+  return <ProductsProductsListPagePage />
 }

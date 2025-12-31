@@ -151,7 +151,7 @@ export function Navbar() {
                 
 
                   {/* Account Dropdown */}
-                  {!isAuthenticated ? (
+                  {isAuthenticated ? (
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
                         <Button variant="ghost" size="icon">
