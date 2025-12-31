@@ -38,7 +38,7 @@ export default function CartPage() {
 
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
         {/* Cart Items */}
-        <div className="lg:col-span-2 space-y-6">
+        <div className="lg:col-span-2 space-y-4">
           {items.map((item) => {
             const variantKey = item.selectedVariants ? JSON.stringify(item.selectedVariants) : undefined
             
@@ -47,7 +47,7 @@ export default function CartPage() {
                 key={`${item.id}-${variantKey || 'default'}`}
                 className="group relative flex flex-col gap-4 rounded-3xl border bg-muted/30 p-6 transition-all hover:shadow-md sm:flex-row sm:items-center dark:bg-card"
               >
-                <div className="relative aspect-square size-24 overflow-hidden rounded-2xl border bg-muted">
+                <div className="relative aspect-square size-28 overflow-hidden rounded-2xl border bg-muted">
                   <Image src={item.image || "/placeholder.svg"} alt={item.name} fill className="object-cover" />
                 </div>
                 <div className="flex flex-1 flex-col gap-1">

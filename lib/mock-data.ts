@@ -1,3 +1,5 @@
+import { tr } from "date-fns/locale"
+
 export interface FilterOption {
   label: string
   value: string
@@ -326,7 +328,7 @@ export const products: Product[] = [
     images: ["/ceramic-coffee-set.png"],
     rating: 4.4,
     reviews: 89,
-    featured: false,
+    featured: true,
     inStock: true,
     features: ["65W Power", "Multi-port", "Compact Design"],
     attributes: [
@@ -346,7 +348,7 @@ export const products: Product[] = [
     images: ["/cotton-tshirts.jpg"],
     rating: 4.6,
     reviews: 234,
-    featured: false,
+    featured: true,
     inStock: true,
     features: ["100% Cotton", "Pre-shrunk", "Pack of 3"],
     attributes: [
@@ -427,7 +429,27 @@ export const products: Product[] = [
     inStock: false,
     features: ["RFID Protection", "Genuine Leather", "Slim Design"],
     attributes: [{ name: "Material", value: "leather" }],
-  }
+  },
+   {
+    id: "12",
+    name: "Cotton T-Shirt Pack",
+    description: "Premium cotton t-shirts in classic colors. Pack of 3.",
+    price: 45,
+    category: "Fashion",
+    subcategory: "tshirts",
+    brand: "Essential Basics",
+    image: "/cotton-tshirts.jpg",
+    images: ["/cotton-tshirts.jpg"],
+    rating: 4.6,
+    reviews: 234,
+    featured: false,
+    inStock: true,
+    features: ["100% Cotton", "Pre-shrunk", "Pack of 3"],
+    attributes: [
+      { name: "Size", value: "m" },
+      { name: "Material", value: "cotton" },
+    ],
+  },
 ]
 
 export const testimonials: Testimonial[] = [

@@ -1,11 +1,11 @@
 import { Hero } from "@/components/hero"
 import { TrustFeatures } from "@/components/trust-features"
-import { FeaturedProducts } from "@/components/featured-products"
-import { NewArrivals } from "@/components/new-arrivals"
+import { NewArrivals } from "@/components/new-arrivals/page"
 import { CategoriesSection } from "@/components/categories-section"
 import { PromoBanner } from "@/components/promo-banner"
 import { Testimonials } from "@/components/testimonials"
 import { BrandLogosSlider } from "@/components/brand-logos-slider"
+import { FeaturedProducts } from "@/components/featured-products/page"
 
 export default function Home() {
   return (

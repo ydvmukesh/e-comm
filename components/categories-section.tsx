@@ -7,7 +7,7 @@ export function CategoriesSection() {
   return (
     <section className="py-8 sm:py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-8 flex items-end justify-between flex-col sm:flex-row">
+        <div className="mb-8 md:mb-10 flex items-end justify-between flex-col sm:flex-row">
           <div className="space-y-2">
             <h2 className="text-3xl font-bold tracking-tight">Shop by Category</h2>
             <p className="text-muted-foreground">
@@ -23,7 +23,7 @@ export function CategoriesSection() {
           </Link>
         </div>
 
-        <div className="-mx-4 md:mx-0 px-4 flex overflow-x-auto md:overflow-visible scrollbar-hide md:grid grid-cols-1 gap-3 md:gap-6 md:grid-cols-3 lg:grid-cols-3">
+        <div className="-mx-4 md:mx-0 px-4 md:px-0 flex overflow-x-auto md:overflow-visible scrollbar-hide md:grid grid-cols-1 gap-3 md:gap-6 md:grid-cols-3 lg:grid-cols-3">
           {categories.map((category) => (
             <Link
               key={category.id}

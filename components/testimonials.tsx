@@ -47,7 +47,7 @@ export function Testimonials() {
   return (
     <section className="py-12 sm:py-20 bg-muted/30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-8 sm:mb-12 text-center space-y-4">
+        <div className="mb-8 sm:mb-8 text-center space-y-4">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">What Our Customers Say</h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
             Don&apos;t just take our word for it. Here are some real experiences from our global community.
