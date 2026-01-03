@@ -233,82 +233,11 @@ export function Navbar() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="border-t md:hidden">
-              <nav className="sticky top-0 z-40 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/80 border-b">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between gap-4">
-            <div className="flex flex-1">
-              <Link href="/" className="flex items-center space-x-2">
-                <div className="flex size-8 items-center justify-center rounded-lg bg-primary">
-                  <span className="text-lg font-bold text-primary-foreground">E</span>
-                </div>
-                <span className="text-xl font-semibold">Elegance</span>
-              </Link>
-            </div>
-            <div className="md:flex md:flex-1 md:justify-center md:space-x-4">
-              <Link
-                href="/"
-                className="hidden md:flex items-center rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-foreground"
-              >
-                Home
-              </Link>
-              <Link
-                href="/products"
-                className="hidden md:flex items-center rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-accent hover:text-foreground"
-              >
-                Products
-              </Link>
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="icon">
-                    <ChevronDown className="h-4 w-4" />
-                    <span className="sr-only">Open menu</span>
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56">
-                  {categories.map((category) => (
-                    <DropdownMenuItem key={category.id}>
-                      <Link href={`/categories?category=${category.slug}`}>{category.name}</Link>
-                    </DropdownMenuItem>
-                  ))}
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem>
-                    <Link href="/policies">Policies</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <Link href="/contact">Contact</Link>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-              <Button variant="ghost" size="icon">
-                <Search className="h-4 w-4" />
-                <span className="sr-only">Search</span>
-              </Button>
-              <Button variant="ghost" size="icon">
-                <Heart className="h-4 w-4" />
-                <span className="sr-only">Favorites</span>
-              </Button>
-              <Button variant="ghost" size="icon">
-                <ShoppingCart className="h-4 w-4" />
-                <span className="sr-only">Cart</span>
-              </Button>
-              <Button variant="ghost" size="icon">
-                <UserCircle className="h-4 w-4" />
-                <span className="sr-only">Profile</span>
-              </Button>
-              <Button variant="ghost" size="icon" onClick={() => setAuthModalOpen(true)}>
-                <LogOut className="h-4 w-4" />
-                <span className="sr-only">Log out</span>
-              </Button>
-            </div>
-            <div className="md:hidden">
-              <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen} >
-                <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon">
-                    <Menu className="size-5" />
-                    <span className="sr-only">Toggle menu</span>
-                  </Button>
-                </SheetTrigger>
+          // <div className="border-t md:hidden">
+       
+          
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen} >
+              <SheetTrigger />
                 <SheetContent side="right" className="w-[300px] sm:w-[400px]">
                   <SheetHeader className="text-left border-b pb-4">
                     <SheetTitle className="flex items-center gap-2">
@@ -371,11 +300,8 @@ export function Navbar() {
                   </div>
                 </SheetContent>
               </Sheet>
-            </div>
-          </div>
-        </div>
-      </nav>
-          </div>
+        
+          // </div>
         )}
       </nav>
 
